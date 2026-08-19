@@ -1,51 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/404.html</loc>
+    <loc>https://AbigailShockey.github.io/nf-core-workflows-ph/404.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/CODE_OF_CONDUCT.html</loc>
+    <loc>https://AbigailShockey.github.io/nf-core-workflows-ph/CODE_OF_CONDUCT.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/LICENSE.html</loc>
+    <loc>https://AbigailShockey.github.io/nf-core-workflows-ph/LICENSE.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/citation.html</loc>
+    <loc>https://AbigailShockey.github.io/nf-core-workflows-ph/aio.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/index.html</loc>
+    <loc>https://AbigailShockey.github.io/nf-core-workflows-ph/citation.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/instructor/404.html</loc>
+    <loc>https://AbigailShockey.github.io/nf-core-workflows-ph/images.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/instructor/CODE_OF_CONDUCT.html</loc>
+    <loc>https://AbigailShockey.github.io/nf-core-workflows-ph/index.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/instructor/LICENSE.html</loc>
+    <loc>https://AbigailShockey.github.io/nf-core-workflows-ph/instructor/404.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/instructor/citation.html</loc>
+    <loc>https://AbigailShockey.github.io/nf-core-workflows-ph/instructor/CODE_OF_CONDUCT.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/instructor/index.html</loc>
+    <loc>https://AbigailShockey.github.io/nf-core-workflows-ph/instructor/LICENSE.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/instructor/introduction.html</loc>
+    <loc>https://AbigailShockey.github.io/nf-core-workflows-ph/instructor/aio.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/instructor/profiles.html</loc>
+    <loc>https://AbigailShockey.github.io/nf-core-workflows-ph/instructor/citation.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/instructor/reference.html</loc>
+    <loc>https://AbigailShockey.github.io/nf-core-workflows-ph/instructor/images.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/introduction.html</loc>
+    <loc>https://AbigailShockey.github.io/nf-core-workflows-ph/instructor/index.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/profiles.html</loc>
+    <loc>https://AbigailShockey.github.io/nf-core-workflows-ph/instructor/instructor-notes.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/reference.html</loc>
+    <loc>https://AbigailShockey.github.io/nf-core-workflows-ph/instructor/introduction.html</loc>
+  </url>
+  <url>
+    <loc>https://AbigailShockey.github.io/nf-core-workflows-ph/instructor/key-points.html</loc>
+  </url>
+  <url>
+    <loc>https://AbigailShockey.github.io/nf-core-workflows-ph/instructor/profiles.html</loc>
+  </url>
+  <url>
+    <loc>https://AbigailShockey.github.io/nf-core-workflows-ph/instructor/reference.html</loc>
+  </url>
+  <url>
+    <loc>https://AbigailShockey.github.io/nf-core-workflows-ph/instructor-notes.html</loc>
+  </url>
+  <url>
+    <loc>https://AbigailShockey.github.io/nf-core-workflows-ph/introduction.html</loc>
+  </url>
+  <url>
+    <loc>https://AbigailShockey.github.io/nf-core-workflows-ph/key-points.html</loc>
+  </url>
+  <url>
+    <loc>https://AbigailShockey.github.io/nf-core-workflows-ph/profiles.html</loc>
+  </url>
+  <url>
+    <loc>https://AbigailShockey.github.io/nf-core-workflows-ph/reference.html</loc>
   </url>
 </urlset>
