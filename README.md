@@ -9,18 +9,6 @@ Current maintainers of this lesson are
 - Abigail Shockey
 - CJ Jossart
 
-## Authors
-
-A list of contributors to the lesson can be found in [AUTHORS](AUTHORS)
-
 ## Citation
 
-To cite this lesson, please consult with [CITATION](CITATION)
-
-## Useful Incubator links
-
-- [Carpentries Development Handbook](https://cdh.carpentries.org)
-- [community-lessons](https://carpentries.org/community-lessons)
-- [lesson-example](https://carpentries.github.io/lesson-example)
-
-
+To cite this lesson, please consult with [CITATION](https://github.com/AbigailShockey/nf-core-workflows-ph/blob/main/CITATION.cff)
