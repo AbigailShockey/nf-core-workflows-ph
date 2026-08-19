@@ -2,12 +2,9 @@
 site: sandpaper::sandpaper_site
 ---
 
-This is a new lesson built with [The Carpentries Workbench][workbench]. 
-
-
-[workbench]: https://carpentries.github.io/sandpaper-docs
-
 ## Lesson objectives
+
+After following this lesson, learners will be able to:
 
 1. Download community developed pipelines and modules using nf-core tools.
 2. Adapt existing nf-core pipelines with a custom parameter and a test profile.
