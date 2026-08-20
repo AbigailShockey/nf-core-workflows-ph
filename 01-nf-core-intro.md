@@ -23,7 +23,47 @@ exercises: 2 # exercise time in minutes
 
 ## What is nf-core?
 
-Episode content will go here
+The instructor should describe that nf-core is both a framework and a community built around creating standardized Nextflow workflows according to a specific set of guidelines. There are six main benefits to the nf-core framework outlined in nf-core's main publication that the instructor should define (community, guidelines, portability, reproducibility, standardization, and research impact).
+
+:::::::::::::::::::::::::::::::::::::::::: instructor
+
+Remember to explain how the six main benefits of using nf-core are featured in the main figure for this episode.
+
+:::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::::: discussion
+
+### How might the nf-core framework benefit you?
+
+Take a moment to reflect on the Nextflow workflows you've written or worked on. How might the nf-core framework improve the scripting of your workflow(s)? After reflecting, discuss with the people (or person) next to you.
+
+:::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+## Finding community workflows on the command line with nf-core tools
+
+The instructor should demonstrate the usage of the `nf-core` starting with `nf-core --help`. They should then describe the most important subcommands for the lesson (`pipelines` and `modules`) and demonstrate the usage of `nf-core pipelines --help` and `nf-core pipelines list`. This section should close with an explanation of filtering pipelines with keywords using `nf-core pipelines list`.
+
+::::::::::::::::::::::::::::: challenge
+
+### Finding genome assembly pipelines
+
+1. What `nf-core` command would you use to list any bacterial genome assembly pipelines?
+2. How many genome assembly pipelines are there?
+
+::::: hint
+
+nf-core tool's subcommands can be listed using `nf-core --help`
+
+::::::::::
+
+:::: solution
+
+1. `nf-core pipelines list bacterial genome assembly`
+2. One, bacass
+
+:::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
