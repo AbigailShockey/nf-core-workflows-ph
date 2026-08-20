@@ -67,7 +67,7 @@ contact: 'abigail.shockey@slh.wisc.edu'
 
 # Order of episodes in your lesson
 episodes: 
-- introduction.md
+# - introduction.md
 - 01-nf-core-intro.md
 - 02-running_nf-core_pipeline.md
 
