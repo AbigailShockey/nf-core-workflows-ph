@@ -6,6 +6,7 @@
 "links.md" "8184cf4149eafbf03ce8da8ff0778c14" "site/built/links.md" "2026-08-19"
 "episodes/01-nf-core-intro.md" "306816a521df16d683b3833af0c773b7" "site/built/01-nf-core-intro.md" "2026-08-20"
 "episodes/02-running_nf-core_pipeline.md" "adc5b9dbaa67f92c072425643bfe6a8c" "site/built/02-running_nf-core_pipeline.md" "2026-08-20"
+"instructors/design-notes.md" "96aca19c1d8491ff5650de15e92ef2f3" "site/built/design-notes.md" "2026-08-20"
 "instructors/instructor-notes.md" "347c5c33707fe980d11a05e1f23c70a1" "site/built/instructor-notes.md" "2026-08-20"
 "learners/reference.md" "1c7cc4e229304d9806a13f69ca1b8ba4" "site/built/reference.md" "2026-08-19"
 "learners/setup.md" "5456593e4a75491955ac4a252c05fbc9" "site/built/setup.md" "2026-08-19"
