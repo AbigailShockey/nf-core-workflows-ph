@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://AbigailShockey.github.io/nf-core-workflows-ph/01-nf-core-intro.html</loc>
+  </url>
+  <url>
+    <loc>https://AbigailShockey.github.io/nf-core-workflows-ph/02-running_nf-core_pipeline.html</loc>
+  </url>
+  <url>
     <loc>https://AbigailShockey.github.io/nf-core-workflows-ph/404.html</loc>
   </url>
   <url>
@@ -20,6 +26,12 @@
   </url>
   <url>
     <loc>https://AbigailShockey.github.io/nf-core-workflows-ph/index.html</loc>
+  </url>
+  <url>
+    <loc>https://AbigailShockey.github.io/nf-core-workflows-ph/instructor/01-nf-core-intro.html</loc>
+  </url>
+  <url>
+    <loc>https://AbigailShockey.github.io/nf-core-workflows-ph/instructor/02-running_nf-core_pipeline.html</loc>
   </url>
   <url>
     <loc>https://AbigailShockey.github.io/nf-core-workflows-ph/instructor/404.html</loc>
