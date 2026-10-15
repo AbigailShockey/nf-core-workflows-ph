@@ -394,12 +394,79 @@ according to a specific set of guidelines. There are six main benefits
 to the nf-core framework outlined in nf-core’s main publication that the
 instructor should define (community, guidelines, portability,
 reproducibility, standardization, and research impact).</p>
+<p>nf-core is a community-led project to develop a set of best-practice
+pipelines built using Nextflow workflow management system. Pipelines are
+governed by a set of guidelines, enforced by community code reviews and
+automatic code testing.</p>
+<figure><img src="../fig/nf-core.png" title="nf-core" alt="A diagram showcasing the key aspects of nf-core, a community effort to provide best-practice analysis pipelines. The diagram is divided into three sections: Deploy, Participate, and Develop. The Deploy section includes features like Stable pipelines, Centralized configs, List and update pipelines, and Download for offline use. The Participate section highlights Documentation, Slack workspace, Twitter updates, and Hackathons. The Develop section emphasizes the Starter template, Code guidelines, CI code linting and tests, and Helper tools." class="figure mx-auto d-block"><div class="figcaption">A diagram showcasing the key aspects of nf-core,
+a community effort to provide best-practice analysis pipelines. The
+diagram is divided into three sections: Deploy, Participate, and
+Develop. The Deploy section includes features like Stable pipelines,
+Centralized configs, List and update pipelines, and Download for offline
+use. The Participate section highlights Documentation, Slack workspace,
+Twitter updates, and Hackathons. The Develop section emphasizes the
+Starter template, Code guidelines, CI code linting and tests, and Helper
+tools.</div>
+</figure><div class="section level3">
+<h3 id="the-core-features-and-key-benefits-of-nf-core">The core features and key benefits of nf-core<a class="anchor" aria-label="anchor" href="#the-core-features-and-key-benefits-of-nf-core"></a>
+</h3>
+<p>There are six core features of nf-core that are beneficial to
+bioinformaticians and other computational biologist, whether they be in
+a government, private sector, or academic setting:</p>
+<ol style="list-style-type: decimal">
+<li>
+<strong>Community</strong>: One major advantage of the nf-core
+framework is its community, which develops best practices, pipelines,
+and tools. All code is hosted openly on GitHub, and members actively
+participate in code reviews and discussions via GitHub and Slack. Both
+developers and users can participate in improving pipelines. This
+community-driven approach overcomes the traditional barriers between
+research groups, allowing for shared expertise and collaborative
+development.</li>
+<li>
+<strong>Guidelines</strong>: The nf-core community has established a
+set of guidelines that outline the requirements and recommendations for
+pipeline development. This ensures consistency and adherence to best
+practices across all workflows. These guidelines require all pipelines
+to provide thorough documentation, including usage examples and results
+descriptions. Additionally, test data sets must be included to enable
+automated continuous-integration testing. This ensures pipeline
+functionality is maintained with every change.</li>
+<li>
+<strong>Portability</strong>: All nf-core pipelines allow for
+execution across local machines and cloud platforms. This surmounts the
+challenge of creating reproducible analyses across different systems.
+The nf-core framework enforces consistent implementation practices
+through templates, guidelines, and lint tests that ensure all pipelines
+fully utilize Nextflow’s portability features. Additionally, nf-core
+requires all pipelines to bundle dependencies in Docker containers,
+providing static runtime environments. This minimizes issues related to
+hardware differences, operating systems, and software versions.</li>
+<li>
+<strong>Reproducibility</strong>: Once stable, ​nf-core​ pipelines are
+given tagged releases on GitHub. Each version is given a number using
+semantic versioning, and nf-core​ pipelines support the collection of
+analysis metadata such as pipeline version, software versions, and
+command and parameter configuration.</li>
+<li>
+<strong>Standardization</strong>: To help developers get started
+with new pipelines, nf-core provides a standardized pipeline template
+that adheres to all nf-core guidelines, as well as command line tools
+for pipeline creation. This lowers barriers to development and provides
+consistent structure across all pipelines, making them easier to learn,
+use, and develop.</li>
+<li>
+<strong>Research Impact</strong>: The nf-core framework increases
+reliability and reproducibility of scientific analyses, and it
+accelerates scientific discoveries through ready-to-use, validated
+workflows.</li>
+</ol>
 <div id="accordionInstructor1" class="accordion instructor-note accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
   <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
 <div class="accordion-body">
 <p>Remember to explain how the six main benefits of using nf-core are
 featured in the main figure for this episode.</p>
@@ -431,10 +498,11 @@ usage of <code>nf-core pipelines --help</code> and
 <code>nf-core pipelines list</code>. This section should close with an
 explanation of filtering pipelines with keywords using
 <code>nf-core pipelines list</code>.</p>
+</div>
 </section><section><h2 class="section-heading" id="what-are-nf-core-pipelines">What are nf-core pipelines?<a class="anchor" aria-label="anchor" href="#what-are-nf-core-pipelines"></a>
 </h2>
 <hr class="half-width">
-<p>nf-core pipelines are an organised collection of Nextflow scripts,
+<p>nf-core pipelines are an organized collection of Nextflow scripts,
 other non-nextflow scripts (written in any language), configuration
 files, software specifications, and documentation hosted on <a href="https://github.com/nf-core" class="external-link">GitHub</a>. There is usually a single
 pipeline for a given data and analysis type e.g. There is a single
@@ -643,7 +711,7 @@ bacterial genome assembly pipelines?</li>
 <button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint1" aria-expanded="false" aria-controls="collapseHint1">
   <h4 class="accordion-header" id="headingHint1"> Give me a hint </h4>
 </button>
-<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
+<div id="collapseHint1" class="accordion-collapse collapse" data-bs-parent="#accordionHint1" aria-labelledby="headingHint1">
 <div class="accordion-body">
 <p>nf-core tool’s subcommands can be listed using
 <code>nf-core --help</code></p>
@@ -656,7 +724,7 @@ bacterial genome assembly pipelines?</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li><code>nf-core pipelines list bacterial genome assembly</code></li>
