@@ -39,16 +39,34 @@ Take a moment to reflect on the Nextflow workflows you've written or worked on. 
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Finding community workflows on the command line with nf-core tools
-
 The instructor should demonstrate the usage of the `nf-core` starting with `nf-core --help`. They should then describe the most important subcommands for the lesson (`pipelines` and `modules`) and demonstrate the usage of `nf-core pipelines --help` and `nf-core pipelines list`. This section should close with an explanation of filtering pipelines with keywords using `nf-core pipelines list`.
 
-
-### What are nf-core pipelines?
+## What are nf-core pipelines?
 
 nf-core pipelines are an organised collection of Nextflow scripts,  other non-nextflow scripts (written in any language), configuration files, software specifications, and documentation hosted on [GitHub](https://github.com/nf-core). There is usually a single pipeline for a given data and analysis type e.g. There is a single pipeline for bulk RNA-Seq. All nf-core pipelines are distributed under the [MIT licence](https://en.wikipedia.org/wiki/MIT_License).
 
-### What is nf-core tools?
+## Finding community workflows
+
+There are two main ways you can find nf-core pipelines. You can manually search the pipelines page of the nf-core website, found [here](https://nf-co.re/pipelines/), or you can use nf-core tools on the command line.
+
+### Finding nf-core pipelines online
+
+As an example, we'll look at the webpage for nf-core's [demo pipeline](https://nf-co.re/demo/1.0.1/).
+
+Each nf-core pipeline's webpage contains the following information, organized in tabs:
+
+ 1. Introduction - A summary of the pipeline
+ 2. Usage - Instructions on how to run the pipeline
+ 3. Parameters - A list of the pipeline's parameters, which includes a description of the parameter and their default values
+ 4. Output - A description of the pipeline's output
+ 5. Results - An example of the pipeline's results
+ 6. Releases - The pipeline's version history
+
+Other useful information on a pipeline's webpage includes commands to clone the pipeline, and links to ask a question about the pipeline on Slack or open an issue using GitHub. Some pipelines also feature Youtube Videos on their webpages, which can also be found on [this playlist](https://youtube.com/playlist?list=PL3xpfTVZLcNh0T2JLJ_hRDqdouS4o8ik7&si=I5-zpScD-HGWas3w).
+
+### Finding nf-core pipelines on the command line using nf-core tools
+
+#### What is nf-core tools?
 
 nf-core provides a suite of helper tools aim to help people run and develop pipelines.
 The [nf-core tools](https://nf-co.re/tools) package is written in Python and can run from the command line or imported and used within other packages.
