@@ -25,6 +25,23 @@ exercises: 2 # exercise time in minutes
 
 The instructor should describe that nf-core is both a framework and a community built around creating standardized Nextflow workflows according to a specific set of guidelines. There are six main benefits to the nf-core framework outlined in nf-core's main publication that the instructor should define (community, guidelines, portability, reproducibility, standardization, and research impact).
 
+nf-core is a community-led project to develop a set of best-practice pipelines built using Nextflow workflow management system.
+Pipelines are governed by a set of guidelines, enforced by community code reviews and automatic code testing.
+
+![A diagram showcasing the key aspects of nf-core, a community effort to provide best-practice analysis pipelines. The diagram is divided into three sections: Deploy, Participate, and Develop. The Deploy section includes features like Stable pipelines, Centralized configs, List and update pipelines, and Download for offline use. The Participate section highlights Documentation, Slack workspace, Twitter updates, and Hackathons. The Develop section emphasizes the Starter template, Code guidelines, CI code linting and tests, and Helper tools.](fig/nf-core.png 'nf-core')
+
+
+### The core features and key benefits of nf-core
+
+There are six core features of nf-core that are beneficial to bioinformaticians and other computational biologist, whether they be in a government, private sector, or academic setting:
+
+1. **Community**: One major advantage of the nf-core framework is its community, which develops best practices, pipelines, and tools. All code is hosted openly on GitHub, and members actively participate in code reviews and discussions via GitHub and Slack. Both developers and users can participate in improving pipelines. This community-driven approach overcomes the traditional barriers between research groups, allowing for shared expertise and collaborative development.
+2. **Guidelines**: The nf-core community has established a set of guidelines that outline the requirements and recommendations for pipeline development. This ensures consistency and adherence to best practices across all workflows. These guidelines require all pipelines to provide thorough documentation, including usage examples and results descriptions. Additionally, test data sets must be included to enable automated continuous-integration testing. This ensures pipeline functionality is maintained with every change.
+3. **Portability**: All nf-core pipelines allow for execution across local machines and cloud platforms. This surmounts the challenge of creating reproducible analyses across different systems. The nf-core framework enforces consistent implementation practices through templates, guidelines, and lint tests that ensure all pipelines fully utilize Nextflow's portability features. Additionally, nf-core requires all pipelines to bundle dependencies in Docker containers, providing static runtime environments. This minimizes issues related to hardware differences, operating systems, and software versions.
+4. **Reproducibility**: Once stable, ​nf-core​ pipelines are given tagged releases on GitHub. Each version is given a number using semantic versioning, and nf-core​ pipelines support the collection of analysis metadata such as pipeline version, software versions, and command and parameter configuration.
+5. **Standardization**: To help developers get started with new pipelines, nf-core provides a standardized pipeline template that adheres to all nf-core guidelines, as well as command line tools for pipeline creation. This lowers barriers to development and provides consistent structure across all pipelines, making them easier to learn, use, and develop.
+7. **Research Impact**: The nf-core framework increases reliability and reproducibility of scientific analyses, and it accelerates scientific discoveries through ready-to-use, validated workflows.
+
 :::::::::::::::::::::::::::::::::::::::::: instructor
 
 Remember to explain how the six main benefits of using nf-core are featured in the main figure for this episode.
@@ -39,9 +56,167 @@ Take a moment to reflect on the Nextflow workflows you've written or worked on. 
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Finding community workflows on the command line with nf-core tools
-
 The instructor should demonstrate the usage of the `nf-core` starting with `nf-core --help`. They should then describe the most important subcommands for the lesson (`pipelines` and `modules`) and demonstrate the usage of `nf-core pipelines --help` and `nf-core pipelines list`. This section should close with an explanation of filtering pipelines with keywords using `nf-core pipelines list`.
+
+## What are nf-core pipelines?
+
+nf-core pipelines are an organized collection of Nextflow scripts,  other non-nextflow scripts (written in any language), configuration files, software specifications, and documentation hosted on [GitHub](https://github.com/nf-core). There is usually a single pipeline for a given data and analysis type e.g. There is a single pipeline for bulk RNA-Seq. All nf-core pipelines are distributed under the [MIT licence](https://en.wikipedia.org/wiki/MIT_License).
+
+## Finding community workflows
+
+There are two main ways you can find nf-core pipelines. You can manually search the pipelines page of the nf-core website, found [here](https://nf-co.re/pipelines/), or you can use nf-core tools on the command line.
+
+### Finding nf-core pipelines online
+
+As an example, we'll look at the webpage for nf-core's [demo pipeline](https://nf-co.re/demo/1.0.1/).
+
+Each nf-core pipeline's webpage contains the following information, organized in tabs:
+
+ 1. Introduction - A summary of the pipeline
+ 2. Usage - Instructions on how to run the pipeline
+ 3. Parameters - A list of the pipeline's parameters, which includes a description of the parameter and their default values
+ 4. Output - A description of the pipeline's output
+ 5. Results - An example of the pipeline's results
+ 6. Releases - The pipeline's version history
+
+Other useful information on a pipeline's webpage includes commands to clone the pipeline, and links to ask a question about the pipeline on Slack or open an issue using GitHub. Some pipelines also feature Youtube Videos on their webpages, which can also be found on [this playlist](https://youtube.com/playlist?list=PL3xpfTVZLcNh0T2JLJ_hRDqdouS4o8ik7&si=I5-zpScD-HGWas3w).
+
+### Finding nf-core pipelines on the command line using nf-core tools
+
+#### What is nf-core tools?
+
+nf-core provides a suite of helper tools aim to help people run and develop pipelines.
+The [nf-core tools](https://nf-co.re/tools) package is written in Python and can run from the command line or imported and used within other packages.
+
+#### nf-core tools sub-commands
+
+You can use the `--help` option to see the range of nf-core tools sub-commands.
+
+```bash
+nf-core --help
+```
+
+```output
+
+
+                                          ,--./,-.
+          ___     __   __   __   ___     /,-._.--~\ 
+    |\ | |__  __ /  ` /  \ |__) |__         }  {
+    | \| |       \__, \__/ |  \ |___     \`-._,-`-,
+                                          `._,._,'
+
+    nf-core/tools version 4.0.2 - https://nf-co.re
+
+
+ Usage: nf-core [OPTIONS] COMMAND [ARGS]...                           
+                                                                      
+ nf-core/tools provides a set of helper tools for use with nf-core    
+ Nextflow pipelines.                                                  
+ It is designed for both end-users running pipelines and also         
+ developers creating new pipelines.                                   
+                                                                      
+ ═ Commands ═════════════════════════════════════════════════════════ 
+ interface                              Launch the nf-core interface  
+ modules        m,module                Commands to manage Nextflow   
+                                        DSL2 modules (tool wrappers). 
+ pipelines      p,pipeline              Commands to manage nf-core    
+                                        pipelines.                    
+ subworkflows   s,swf,subworkflow       Commands to manage Nextflow   
+                                        DSL2 subworkflows (tool       
+                                        wrappers).                    
+ test-datasets  t,td,tds,test-datasets  Commands to manage nf-core    
+                                        test datasets.                
+                                                                      
+ ═ Options ══════════════════════════════════════════════════════════ 
+ --version            Show the version and exit.                      
+ --verbose        -v  Print verbose output to the console.            
+ --hide-progress      Don't show progress bars.                       
+ --log-file       -l  Save a verbose log to a file. [<filename>]      
+ --help           -h  Show this message and exit. 
+```
+
+### Listing available nf-core pipelines
+
+The simplest sub-command is `nf-core pipelines list`, which lists all available nf-core pipelines in the nf-core Github repository.
+
+The output shows the latest version number and when that was released.
+If the pipeline has been pulled locally using Nextflow, it tells you when that was and whether you have the latest version.
+
+```bash
+$ nf-core pipelines list
+```
+
+An example of the output from the command is as follows:
+
+```output
+                                          ,--./,-.
+          ___     __   __   __   ___     /,-._.--~\ 
+    |\ | |__  __ /  ` /  \ |__) |__         }  {
+    | \| |       \__, \__/ |  \ |___     \`-._,-`-,
+                                          `._,._,'
+
+    nf-core/tools version 4.0.2 - https://nf-co.re
+
+
+┏━━━━━━━━━━━┳━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━┓
+┃           ┃       ┃           ┃           ┃           ┃ Have       ┃
+┃ Pipeline  ┃       ┃    Latest ┃           ┃      Last ┃ latest     ┃
+┃ Name      ┃ Stars ┃   Release ┃  Released ┃    Pulled ┃ release?   ┃
+┡━━━━━━━━━━━╇━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━━┩
+│ variantb… │    50 │     1.5.0 │  3 months │         - │ -          │
+│           │       │           │       ago │           │            │
+│ deepmuts… │     5 │       dev │  11 hours │         - │ -          │
+│           │       │           │       ago │           │            │
+│ mhcquant  │    49 │     3.2.0 │  2 months │         - │ -          │
+│           │       │           │       ago │           │            │
+│ proteinf… │   108 │     2.0.0 │  4 months │         - │ -          │
+│           │       │           │       ago │           │            │
+│ methylseq │   197 │     4.2.0 │  7 months │         - │ -          │
+│           │       │           │       ago │           │            │
+│ rnastruc… │     1 │       dev │ yesterday │         - │ -          │
+│ datasync  │    10 │       dev │    2 days │         - │ -          │
+│           │       │           │       ago │           │            │
+│ raredise… │   122 │     3.1.2 │   2 weeks │         - │ -          │
+│           │       │           │       ago │           │            │
+│ rnasplice │    68 │     1.0.4 │   2 years │         - │ -          │
+│           │       │           │       ago │           │            │
+│ sarek     │   583 │     3.9.0 │   3 weeks │         - │ -          │
+[..truncated..]
+```
+
+#### Filtering available nf-core pipelines
+
+If you supply additional keywords after the `pipelines list` sub-command, the listed pipeline will be filtered.
+**Note:** that this searches more than just the displayed output, including keywords and description text.
+
+Here we filter on the keywords **genome** and **assembly**.
+
+```bash
+$ nf-core pipelines list genome assembly
+```
+
+```output
+                                          ,--./,-.
+          ___     __   __   __   ___     /,-._.--~\ 
+    |\ | |__  __ /  ` /  \ |__) |__         }  {
+    | \| |       \__, \__/ |  \ |___     \`-._,-`-,
+                                          `._,._,'
+
+    nf-core/tools version 4.0.2 - https://nf-co.re
+
+
+┏━━━━━━━━━━━━━━━━━┳━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Pipeline Name   ┃ Stars ┃ Latest Release ┃      Released ┃ Last Pulled ┃ Have latest release? ┃
+┡━━━━━━━━━━━━━━━━━╇━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━┩
+│ mag             │   308 │          5.4.2 │  4 months ago │           - │ -                    │
+│ bacass          │    91 │          2.6.0 │  3 months ago │           - │ -                    │
+│ genomeqc        │    24 │            dev │   1 weeks ago │           - │ -                    │
+│ genomeassembler │    33 │          1.1.0 │ 12 months ago │           - │ -                    │
+│ funcscan        │   117 │          4.0.0 │   3 weeks ago │           - │ -                    │
+│ genomeskim      │     4 │            dev │   4 years ago │           - │ -                    │
+│ genomeannotator │    38 │            dev │   4 years ago │           - │ -                    │
+└─────────────────┴───────┴────────────────┴───────────────┴─────────────┴──────────────────────┘
+```
 
 ::::::::::::::::::::::::::::: challenge
 
