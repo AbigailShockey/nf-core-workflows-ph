@@ -110,14 +110,15 @@ Other parameter groups in the ouput detail specific parameters that can be used 
 
 The `test` profile runs the pipeline on a small dataset to make sure the pipeline works as expected. When downloading a new pipeline it may be good to look at the documentation and run the test profile to make sure the pipeline works as expected in your environment.
 
-:::::::::::::::::::::::::::::::::::::: challenge
+:::::::::::::::::::::::::::::::::::::::  challenge
 
 ### Running an nf-core pipeline: Exercise 1
 1. What command would you use to download the 'bacass' pipeline using the `nf-core tools`? 
 2. What additional flags would you add to your command that would download the specific version of 2.6.0?
 3. What `nextflow` command would you run that would provide the inputs and outputs of the pipeline?
 4. What `nextflow` command would you run to to run the 'bacass' pipeline version 2.6.0 using the test profile with docker, saving results to a folder called 'results'?
-:::::::::::::: solution
+   
+:::::::::::::::  solution
 
 ### Answers 
 1. `nf-core pipelines download bacass`
