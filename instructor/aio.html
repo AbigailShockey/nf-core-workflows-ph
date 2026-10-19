@@ -454,7 +454,7 @@ workflows.</li>
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
   <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
 <div class="accordion-body">
 <p>Remember to explain how the six main benefits of using nf-core are
 featured in the main figure for this episode.</p>
@@ -703,7 +703,7 @@ bacterial genome assembly pipelines?</li>
 <button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint1" aria-expanded="false" aria-controls="collapseHint1">
   <h4 class="accordion-header" id="headingHint1"> Give me a hint </h4>
 </button>
-<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
+<div id="collapseHint1" class="accordion-collapse collapse" data-bs-parent="#accordionHint1" aria-labelledby="headingHint1">
 <div class="accordion-body">
 <p>nf-core tool’s subcommands can be listed using
 <code>nf-core --help</code></p>
@@ -716,7 +716,7 @@ bacterial genome assembly pipelines?</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li><code>nf-core pipelines list bacterial genome assembly</code></li>
@@ -754,7 +754,7 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-02-running_nf-core_pipeline"><p>Content from <a href="02-running_nf-core_pipeline.html">Running an nf-core pipeline</a></p>
 <hr>
-<p>Last updated on 2026-10-16 |
+<p>Last updated on 2026-10-19 |
 
         <a href="https://github.com/AbigailShockey/nf-core-workflows-ph/edit/main/episodes/02-running_nf-core_pipeline.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 25 minutes</p>
@@ -771,8 +771,6 @@ any links that you are not going to use.
 <ul>
 <li>How do I download an nf-core pipeline using nf-core tools?</li>
 <li>How do I find out what inputs and outputs a pipeline has?</li>
-<li>How do I run an nf-core pipeline using its built-in test
-profile?</li>
 </ul>
 </div>
 </div>
@@ -781,20 +779,17 @@ profile?</li>
 <div class="card-body">
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
-<p><em>By the end of this episode, learners will be able to…</em></p>
 <ul>
-<li>Utilize nf-core tools to download a pipeline on command line</li>
+<li>Download nf-core pipelines on command line utilizing Nextflow</li>
 <li>Find the expected inputs and outputs of a pipeline</li>
-<li>Run the demo nf-core pipeline on the command line using the built-in
-test profile</li>
 </ul>
 </div>
 </div>
 </div>
 </div>
 </div>
-<p>We have started to use the nf-core tool by searching for piplines. We
-will now go through the process of downloading and running a nf-core
+<p>In the last episode, we used nf-core tools to search for pipelines.
+We will now go through the process of downloading and running an nf-core
 pipeline.</p>
 <div class="section level3">
 <h3 id="downloading-nf-core-pipelines">Downloading nf-core pipelines<a class="anchor" aria-label="anchor" href="#downloading-nf-core-pipelines"></a>
@@ -802,24 +797,24 @@ pipeline.</p>
 <div class="section level4">
 <h4 id="software-requirements-for-nf-core-pipelines">Software requirements for nf-core pipelines<a class="anchor" aria-label="anchor" href="#software-requirements-for-nf-core-pipelines"></a>
 </h4>
-<p>Something to consider as we work with nf-core pipelines are their
-softer depencides. nf-core pipeline software dependencies are specified
-using either Docker, Singularity or Conda. It is Nextflow that handles
-the downloading of containers and creation of conda environments. In
-theory it is possible to run the pipelines with software installed by
-other methods (e.g. environment modules, or manual installation), but
-this is not recommended. This something you will not need to worry about
-in this training, since the tools used by the pipelines are already
-downloaded in our environments.</p>
+<p>As we work with nf-core pipelines, we should consider their software
+dependencies. nf-core pipelines specify these dependencies using Docker,
+Singularity, or Conda, and Nextflow handles downloading the containers
+and creating the Conda environments for you. In theory it is possible to
+run the pipelines with software installed by other methods
+(e.g. environment modules or manual installation), but this is not
+recommended. You will not need to manage any of this in this training,
+because the tools used by our pipelines are already downloaded in your
+environment.</p>
 </div>
 <div class="section level4">
-<h4 id="fetching-pipeline-code-with-nextflow">Fetching pipeline code with nextflow<a class="anchor" aria-label="anchor" href="#fetching-pipeline-code-with-nextflow"></a>
+<h4 id="fetching-pipeline-code-with-nextflow">Fetching pipeline code with Nextflow<a class="anchor" aria-label="anchor" href="#fetching-pipeline-code-with-nextflow"></a>
 </h4>
 <p>Unless you are actively developing pipeline code, you should use
 Nextflow’s <a href="https://www.nextflow.io/docs/latest/sharing.html" class="external-link">built-in
 functionality</a> to fetch nf-core pipelines. You can use the following
 command to pull the latest version of a remote workflow from the nf-core
-github site.;</p>
+GitHub site.</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -829,11 +824,11 @@ github site.;</p>
 pipeline version number that you wish to use with the
 <code>-revision</code>/<code>-r</code> flag.</p>
 <p>In the example below we are pulling the viralrecon pipeline version
-3.0.0. Viralrecon is not yet upated to strict config parsing, a change
-implemented in v26 of Nextflow (the version installed in the working
-environment) that we will not discuss as part of this training. We need
-to export the <code>NXF_SYNTAX_PARSER</code> param equal to
-<code>v1</code> to run viralrecon without an error.</p>
+3.0.0. Viralrecon has not yet been updated to support strict config
+parsing, which was introduced in Nextflow v26 (the version installed in
+our working environment). We will not cover strict parsing in this
+training, but we need to set <code>NXF_SYNTAX_PARSER</code> variable
+equal to <code>v1</code> so viralrecon runs without errors.</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -848,21 +843,20 @@ to export the <code>NXF_SYNTAX_PARSER</code> param equal to
 </div>
 </div>
 </div>
-<section><h2 class="section-heading" id="usage-instructions-and-documentation">Usage instructions and documentation<a class="anchor" aria-label="anchor" href="#usage-instructions-and-documentation"></a>
-</h2>
-<hr class="half-width">
-<p>You can find general documentation and instructions for Nextflow and
-nf-core on the <a href="https://nf-co.re/" class="external-link">nf-core website</a> .
-Pipeline-specific documentation is bundled with each pipeline in the
-/docs folder. This can be read either locally, on GitHub, or on the
-nf-core website.</p>
+<div class="section level3">
+<h3 id="usage-instructions-and-documentation">Usage instructions and documentation<a class="anchor" aria-label="anchor" href="#usage-instructions-and-documentation"></a>
+</h3>
+<p>As we discussed in the last episode, you can find general
+documentation and instructions for Nextflow and nf-core on the <a href="https://nf-co.re/" class="external-link">nf-core website</a>. Pipeline-specific
+documentation is bundled with each pipeline in the /docs folder. This
+can be read either locally, on GitHub, or on the nf-core website.</p>
 <p>Each pipeline has its own webpage at <a href="https://nf-co.re/" class="external-link">https://nf-co.re/</a>&lt;pipeline_name&gt;
 e.g. <a href="https://nf-co.re/rnaseq/usage" class="external-link">nf-co.re/rnaseq</a></p>
 <p>In addition to this documentation, each pipeline comes with basic
-command line reference. This can be seen by running the pipeline with
-the parameter <code>--help</code> , for example. The <code>--help</code>
-options is the quickest way to find out what a pipeline needs and where
-its results go. :</p>
+command-line reference. This can be seen by running the pipeline with
+the parameter <code>--help</code>, for example. The <code>--help</code>
+option is a quick way to find out what a pipeline needs and where its
+results go.</p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -872,7 +866,7 @@ its results go. :</p>
 option is sufficient, but viralrecon requires its required parameters be
 fulfilled in order for the <code>--help</code> option to work. This is
 why we used a special profile called <code>test</code>.</p>
-<p>The help ouput groups parameters by topic. Look for the
+<p>The help output groups parameters by topic. Look for the
 <strong>Input/output options</strong> group, which lists:</p>
 <pre><code> N E X T F L O W   ~  version 26.04.6
 
@@ -889,7 +883,7 @@ Launching `https://github.com/nf-core/viralrecon` [big_stone] revision: 395079f1
 ------------------------------------------------------
 Typical pipeline command:
 
-  nextflow run nf-core/viralrecon -profile &lt;docker/singularity/.../institute&gt; --input samplesheet.csv --outdir&lt;OUTDIR&gt;
+  nextflow run nf-core/viralrecon -profile &lt;docker/singularity/.../institute&gt; --input samplesheet.csv --outdir &lt;OUTDIR&gt;
 
 given to `--help`, the full help message of that parameter will be
 printed.
@@ -907,16 +901,16 @@ absolute paths to storage on Cloud infrastructure.
   --email                        [string] Email address for completion summary.
   --multiqc_title                [string] MultiQC report title. Printed as page header, used for filename if not
 otherwise specified.  </code></pre>
-<p>Looking at the ouptut from the <code>--help</code> command we can see
-what parameters important for inputs and outputs and a descriptions of
+<p>Looking at the output from the <code>--help</code> command we can see
+which parameters important for inputs and outputs and a description of
 what they are and what the pipeline expects.</p>
-<p>Other parameter groups in the ouput detail specific parameters that
-can be used for reference genome or tool analysis options.</p>
+<p>Other parameter groups in the output detail specific parameters that
+can be used for different parts of the pipeline, for example they can be
+used for reference genome or tool analysis options.</p>
 <p>The <code>test</code> profile runs the pipeline on a small dataset to
-make sure the pipeline works as expected. When downloading a new
-pipeline it may be good to look at the documentation and run the test
-profile to make sure the pipeline works as expected in your
-environment.</p>
+make sure the pipeline works as expected. In this episode we will not be
+running this command, but it can be a helpful way to verify the pipeline
+works as expected in your environment.</p>
 <div id="running-an-nf-core-pipeline-exercise-1" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -932,9 +926,6 @@ the <code>nf-core tools</code>?</li>
 download the specific version of 2.6.0?</li>
 <li>What <code>nextflow</code> command would you run that would provide
 the inputs and outputs of the pipeline?</li>
-<li>What <code>nextflow</code> command would you run to to run the
-‘bacass’ pipeline version 2.6.0 using the test profile with docker,
-saving results to a folder called ‘results’?</li>
 </ol>
 </div>
 </div>
@@ -946,13 +937,12 @@ saving results to a folder called ‘results’?</li>
   Answers
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li><code>nf-core pipelines download bacass</code></li>
-<li><code>nf-core pipelines download bacass --revision 2.6.0</code></li>
+<li><code>nf-core pipelines download bacass -revision 2.6.0</code></li>
 <li><code>nextflow run nf-core/bacass --help</code></li>
-<li><code>nextflow run nf-core/bacass -r 2.6.0 -profile test --outdir results</code></li>
 </ol>
 </div>
 </div>
@@ -966,16 +956,15 @@ saving results to a folder called ‘results’?</li>
 <div class="callout-inner">
 <div class="callout-content">
 <ul>
-<li>The nf-core tool (<code>nf-core</code>) is a suite of helper tools
+<li>The nf-core tools (<code>nf-core</code>) is a suite of helper tools
 that aims to help people run and develop nf-core pipelines.</li>
 <li>nf-core pipelines can be downloaded with
 <code>nextflow pull nf-core/&lt;pipeline&gt;</code>, and a specific
-version can be downloaed with <code>-revision</code>/<code>-r</code>
+version can be downloaded with <code>-revision</code>/<code>-r</code>
 flag.</li>
-<li>An nf-core workflow is run using
-<code>nextflow run nf-core/&lt;pipeline&gt;</code> syntax.</li>
-<li>The <code>test</code> profile runs a pipeline on a small built-in
-dataset to check that everything works.</li>
+<li>You can use the
+<code>nextflow run nf-core/&lt;pipeline&gt; --help</code> syntax to view
+the input an outputs of a nf-core workflow.</li>
 </ul>
 </div>
 </div>
@@ -984,7 +973,7 @@ dataset to check that everything works.</li>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
-</section></section>
+</div></section>
 </div>
     </main>
 </div>
