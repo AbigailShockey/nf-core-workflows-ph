@@ -113,7 +113,7 @@ nf-core --help
  interface                              Launch the nf-core interface  
  modules        m,module                Commands to manage Nextflow   
                                         DSL2 modules (tool wrappers). 
- workflows      p,pipeline              Commands to manage nf-core    
+ pipelines      p,pipeline              Commands to manage nf-core    
                                         workflows.                    
  subworkflows   s,swf,subworkflow       Commands to manage Nextflow   
                                         DSL2 subworkflows (tool       
@@ -137,7 +137,7 @@ The output shows the latest version number and when that was released.
 If the pipeline has been pulled locally using Nextflow, it tells you when that was and whether you have the latest version.
 
 ```bash
-$ nf-core workflows list
+$ nf-core pipelines list
 ```
 
 An example of the output from the command is as follows:
@@ -186,7 +186,7 @@ If you supply additional keywords after the `workflows list` sub-command, the li
 Here we filter on the keywords **genome** and **assembly**.
 
 ```bash
-$ nf-core workflows list genome assembly
+$ nf-core pipelines list genome assembly
 ```
 
 ```output
@@ -227,7 +227,7 @@ nf-core tool's subcommands can be listed using `nf-core --help`
 
 :::: solution
 
-1. `nf-core workflows list bacterial genome assembly`
+1. `nf-core pipelines list bacterial genome assembly`
 2. One, bacass
 
 :::::::::::::
@@ -239,6 +239,6 @@ nf-core tool's subcommands can be listed using `nf-core --help`
 - nf-core is a community-led project to develop a set of best-practice workflows built using the Nextflow workflow management system.
 - nf-core is portable, reproducible, and standardized, making it an ideal framework for workflow design
 - The nf-core tool (nf-core) is a suite of helper tools that aims to help people run and develop nf-core workflows.
-- nf-core workflows can be found using nf-core workflows list, or by checking the nf-core website.
+- nf-core workflows can be found using `nf-core pipelines list`, or by checking the nf-core website.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
