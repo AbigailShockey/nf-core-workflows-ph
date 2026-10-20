@@ -299,7 +299,7 @@
       </div>
     </nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Running an nf-core pipeline</h1>
-        <p>Last updated on 2026-10-19 |
+        <p>Last updated on 2026-10-20 |
 
         <a href="https://github.com/AbigailShockey/nf-core-workflows-ph/edit/main/episodes/02-running_nf-core_pipeline.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -463,8 +463,8 @@ works as expected in your environment.</p>
 <div id="running-an-nf-core-pipeline-exercise-1" class="callout-inner">
 <h3 class="callout-title">Running an nf-core pipeline: Exercise 1</h3>
 <div class="callout-content">
-<ol style="list-style-type: decimal"><li>What command would you use to download the ‘bacass’ pipeline using
-the <code>nf-core tools</code>?</li>
+<ol style="list-style-type: decimal"><li>What command would you use to download the ‘nf-core/bacass’ pipeline
+using nextflow?</li>
 <li>What additional flags would you add to your command that would
 download the specific version of 2.6.0?</li>
 <li>What <code>nextflow</code> command would you run that would provide
@@ -479,10 +479,10 @@ the inputs and outputs of the pipeline?</li>
   Answers
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
-<ol style="list-style-type: decimal"><li><code>nf-core pipelines download bacass</code></li>
-<li><code>nf-core pipelines download bacass -revision 2.6.0</code></li>
+<ol style="list-style-type: decimal"><li><code>nextflow pull nf-core/bacass</code></li>
+<li><code>nextflow pull nf-core/bacass -revision 2.6.0</code></li>
 <li><code>nextflow run nf-core/bacass --help</code></li>
 </ol></div>
 </div>
@@ -575,7 +575,7 @@ any links that you are not going to use.
   "url": "https://AbigailShockey.github.io/nf-core-workflows-ph/instructor/02-running_nf-core_pipeline.html",
   "identifier": "https://AbigailShockey.github.io/nf-core-workflows-ph/instructor/02-running_nf-core_pipeline.html",
   "dateCreated": "2026-08-19",
-  "dateModified": "2026-10-19",
+  "dateModified": "2026-10-20",
   "datePublished": "2026-10-20"
 }
 
