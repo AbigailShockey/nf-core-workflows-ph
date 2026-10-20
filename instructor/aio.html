@@ -344,7 +344,7 @@
         
 <section id="aio-01-nf-core-intro"><p>Content from <a href="01-nf-core-intro.html">An Introduction to nf-core</a></p>
 <hr>
-<p>Last updated on 2026-10-19 |
+<p>Last updated on 2026-10-20 |
 
         <a href="https://github.com/AbigailShockey/nf-core-workflows-ph/edit/main/episodes/01-nf-core-intro.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 12 minutes</p>
@@ -578,7 +578,7 @@ nf-core tools sub-commands.</p>
  interface                              Launch the nf-core interface
  modules        m,module                Commands to manage Nextflow
                                         DSL2 modules (tool wrappers).
- workflows      p,pipeline              Commands to manage nf-core
+ pipelines      p,pipeline              Commands to manage nf-core
                                         workflows.
  subworkflows   s,swf,subworkflow       Commands to manage Nextflow
                                         DSL2 subworkflows (tool
@@ -606,7 +606,7 @@ tells you when that was and whether you have the latest version.</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1" aria-label="code-block-3-1"></a><span class="ex">$</span> nf-core workflows list</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1" aria-label="code-block-3-1"></a><span class="ex">$</span> nf-core pipelines list</span></code></pre>
 </div>
 <p>An example of the output from the command is as follows:</p>
 <div class="codewrapper">
@@ -659,7 +659,7 @@ displayed output, including keywords and description text.</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1" aria-label="code-block-5-1"></a><span class="ex">$</span> nf-core workflows list genome assembly</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1" aria-label="code-block-5-1"></a><span class="ex">$</span> nf-core pipelines list genome assembly</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -722,7 +722,7 @@ bacterial genome assembly workflows?</li>
 <div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
-<li><code>nf-core workflows list bacterial genome assembly</code></li>
+<li><code>nf-core pipelines list bacterial genome assembly</code></li>
 <li>One, bacass</li>
 </ol>
 </div>
@@ -743,8 +743,9 @@ workflows built using the Nextflow workflow management system.</li>
 ideal framework for workflow design</li>
 <li>The nf-core tool (nf-core) is a suite of helper tools that aims to
 help people run and develop nf-core workflows.</li>
-<li>nf-core workflows can be found using nf-core workflows list, or by
-checking the nf-core website.</li>
+<li>nf-core workflows can be found using
+<code>nf-core pipelines list</code>, or by checking the nf-core
+website.</li>
 </ul>
 </div>
 </div>
@@ -940,7 +941,7 @@ the inputs and outputs of the pipeline?</li>
   Answers
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li><code>nf-core pipelines download bacass</code></li>
