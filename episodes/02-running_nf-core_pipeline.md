@@ -37,16 +37,15 @@ $ nextflow pull nf-core/<PIPELINE>
 
 For the best reproducibility, it is good to explicitly reference the pipeline version number that you wish to use with the `-revision`/`-r` flag.
 
-In the example below we are pulling the viralrecon pipeline version 3.0.0. Viralrecon has not yet been updated to support strict config parsing, which was introduced in Nextflow v26 (the version installed in our working environment). We will not cover strict parsing in this training, but we need to set `NXF_SYNTAX_PARSER` variable equal to `v1` so viralrecon runs without errors.
+In the example below we are pulling the nf-core/demo pipeline version 1.2.0.
 
 ```bash
-$ export NXF_SYNTAX_PARSER=v1
-$ nextflow pull nf-core/viralrecon -revision 3.0.0
+$ nextflow pull nf-core/demo -revision 1.2.0
 ```
 
 ```output
-Checking nf-core/viralrecon:3.0.0 ...
- downloaded from https://github.com/nf-core/viralrecon.git - revision: 395079f1d2 [3.0.0]
+Checking nf-core/demo:1.2.0 ...
+ done - revision: 32893afef8 [1.2.0]
 ```
 
 ### Usage instructions and documentation
@@ -59,17 +58,15 @@ Each pipeline has its own webpage at [https://nf-co.re/](https://nf-co.re/)\<pip
 In addition to this documentation, each pipeline comes with basic command-line reference. This can be seen by running the pipeline with the parameter `--help`, for example. The `--help` option is a quick way to find out what a pipeline needs and where its results go.
 
 ```bash
-nextflow run -r 3.0.0 nf-core/viralrecon --help -profile test
+nextflow run -r 1.2.0 nf-core/demo --help
 ```
-
-**Note:** For some pipelines the `--help` option is sufficient, but viralrecon requires its required parameters be fulfilled in order for the `--help` option to work. This is why we used a special profile called `test`. 
 
 The help output groups parameters by topic. Look for the **Input/output options** group, which lists:
 
 ```
- N E X T F L O W   ~  version 26.04.6
+  N E X T F L O W   ~  version 26.04.6
 
-Launching `https://github.com/nf-core/viralrecon` [big_stone] revision: 395079f1d2 [3.0.0]
+Launching `https://github.com/nf-core/demo` [hopeful_mendel] revision: 32893afef8 [1.2.0]
 
 
 ------------------------------------------------------
@@ -78,35 +75,39 @@ Launching `https://github.com/nf-core/viralrecon` [big_stone] revision: 395079f1
   |\ | |__  __ /  ` /  \ |__) |__         }  {
   | \| |       \__, \__/ |  \ |___     \`-._,-`-,
                                         `._,._,'
-  nf-core/viralrecon 3.0.0
+  nf-core/demo 1.2.0
 ------------------------------------------------------
 Typical pipeline command:
 
-  nextflow run nf-core/viralrecon -profile <docker/singularity/.../institute> --input samplesheet.csv --outdir <OUTDIR>
+  nextflow run nf-core/demo -profile <docker/singularity/.../institute> --input samplesheet.csv --outdir <OUTDIR>
 
-given to `--help`, the full help message of that parameter will be 
-printed.  
-combination with `--help` or `--help_full`.  
 
 Input/output options
-  --input                        [string] Path to comma-separated file containing information about the samples you 
-would like to analyse.  
-  --platform                     [string] NGS platform used to sequence the samples.  (accepted: illumina, 
-nanopore)  
-  --protocol                     [string] Specifies the type of protocol used for sequencing.  (accepted: 
-metagenomic, amplicon)  
-  --outdir                       [string] The output directory where the results will be saved. You have to use 
-absolute paths to storage on Cloud infrastructure.  
-  --email                        [string] Email address for completion summary. 
-  --multiqc_title                [string] MultiQC report title. Printed as page header, used for filename if not 
-otherwise specified.  
+  --input                       [string] Path to a metadata file containing information about the samples in the experiment. 
+  --outdir                      [string] The output directory where the results will be saved. You have to use absolute paths to storage on Cloud infrastructure. 
+  --email                       [string] Email address for completion summary. 
+  --multiqc_title               [string] MultiQC report title. Printed as page header, used for filename if not otherwise specified. 
+
+Reference genome options
+  --genome                      [string] Name of iGenomes reference. 
+  --fasta                       [string] Path to FASTA genome file. 
+
+Process skipping options
+  --skip_trim                   [boolean] Skip trimming fastq files with seqtk 
+
+Generic options
+  --multiqc_methods_description [string]          Custom MultiQC yaml file containing HTML including a methods description. 
+  --help                        [boolean, string] Display the help message. 
+  --help_full                   [boolean]         Display the full detailed help message. 
+  --show_hidden                 [boolean]         Display hidden parameters in the help message (only works when --help or --help_full are provided). 
+ !! Hiding 19 param(s), use the `--showHidden` parameter to show them !!
+------------------------------------------------------
+
 ```
 
 Looking at the output from the `--help` command we can see which parameters important for inputs and outputs and a description of what they are and what the pipeline expects. 
 
 Other parameter groups in the output detail specific parameters that can be used for different parts of the pipeline, for example they can be used for reference genome or tool analysis options.
-
-The `test` profile runs the pipeline on a small dataset to make sure the pipeline works as expected. In this episode we will not be running this command, but it can be a helpful way to verify the pipeline works as expected in your environment.
 
 
 :::::::::::::::::::::::::::::::::::::: challenge
