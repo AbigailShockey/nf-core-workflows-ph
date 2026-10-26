@@ -758,7 +758,7 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-02-running_nf-core_pipeline"><p>Content from <a href="02-running_nf-core_pipeline.html">Running an nf-core pipeline</a></p>
 <hr>
-<p>Last updated on 2026-10-20 |
+<p>Last updated on 2026-10-26 |
 
         <a href="https://github.com/AbigailShockey/nf-core-workflows-ph/edit/main/episodes/02-running_nf-core_pipeline.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 25 minutes</p>
@@ -827,23 +827,18 @@ GitHub site.</p>
 <p>For the best reproducibility, it is good to explicitly reference the
 pipeline version number that you wish to use with the
 <code>-revision</code>/<code>-r</code> flag.</p>
-<p>In the example below we are pulling the viralrecon pipeline version
-3.0.0. Viralrecon has not yet been updated to support strict config
-parsing, which was introduced in Nextflow v26 (the version installed in
-our working environment). We will not cover strict parsing in this
-training, but we need to set <code>NXF_SYNTAX_PARSER</code> variable
-equal to <code>v1</code> so viralrecon runs without errors.</p>
+<p>In the example below we are pulling the nf-core/demo pipeline version
+1.2.0.</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1" aria-label="code-block-2-1"></a><span class="ex">$</span> export NXF_SYNTAX_PARSER=v1</span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1" aria-label="code-block-2-2"></a><span class="ex">$</span> nextflow pull nf-core/viralrecon <span class="at">-revision</span> 3.0.0</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1" aria-label="code-block-2-1"></a><span class="ex">$</span> nextflow pull nf-core/demo <span class="at">-revision</span> 1.2.0</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>Checking nf-core/viralrecon:3.0.0 ...
- downloaded from https://github.com/nf-core/viralrecon.git - revision: 395079f1d2 [3.0.0]</code></pre>
+<pre class="output" tabindex="0"><code>Checking nf-core/demo:1.2.0 ...
+ done - revision: 32893afef8 [1.2.0]</code></pre>
 </div>
 </div>
 </div>
@@ -864,17 +859,13 @@ results go.</p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1" aria-label="code-block-4-1"></a><span class="ex">nextflow</span> run <span class="at">-r</span> 3.0.0 nf-core/viralrecon <span class="at">--help</span> <span class="at">-profile</span> test</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1" aria-label="code-block-4-1"></a><span class="ex">nextflow</span> run <span class="at">-r</span> 1.2.0 nf-core/demo <span class="at">--help</span></span></code></pre>
 </div>
-<p><strong>Note:</strong> For some pipelines the <code>--help</code>
-option is sufficient, but viralrecon requires its required parameters be
-fulfilled in order for the <code>--help</code> option to work. This is
-why we used a special profile called <code>test</code>.</p>
 <p>The help output groups parameters by topic. Look for the
 <strong>Input/output options</strong> group, which lists:</p>
-<pre><code> N E X T F L O W   ~  version 26.04.6
+<pre><code>  N E X T F L O W   ~  version 26.04.6
 
-Launching `https://github.com/nf-core/viralrecon` [big_stone] revision: 395079f1d2 [3.0.0]
+Launching `https://github.com/nf-core/demo` [hopeful_mendel] revision: 32893afef8 [1.2.0]
 
 
 ------------------------------------------------------
@@ -883,38 +874,40 @@ Launching `https://github.com/nf-core/viralrecon` [big_stone] revision: 395079f1
   |\ | |__  __ /  ` /  \ |__) |__         }  {
   | \| |       \__, \__/ |  \ |___     \`-._,-`-,
                                         `._,._,'
-  nf-core/viralrecon 3.0.0
+  nf-core/demo 1.2.0
 ------------------------------------------------------
 Typical pipeline command:
 
-  nextflow run nf-core/viralrecon -profile &lt;docker/singularity/.../institute&gt; --input samplesheet.csv --outdir &lt;OUTDIR&gt;
+  nextflow run nf-core/demo -profile &lt;docker/singularity/.../institute&gt; --input samplesheet.csv --outdir &lt;OUTDIR&gt;
 
-given to `--help`, the full help message of that parameter will be
-printed.
-combination with `--help` or `--help_full`.
 
 Input/output options
-  --input                        [string] Path to comma-separated file containing information about the samples you
-would like to analyse.
-  --platform                     [string] NGS platform used to sequence the samples.  (accepted: illumina,
-nanopore)
-  --protocol                     [string] Specifies the type of protocol used for sequencing.  (accepted:
-metagenomic, amplicon)
-  --outdir                       [string] The output directory where the results will be saved. You have to use
-absolute paths to storage on Cloud infrastructure.
-  --email                        [string] Email address for completion summary.
-  --multiqc_title                [string] MultiQC report title. Printed as page header, used for filename if not
-otherwise specified.  </code></pre>
+  --input                       [string] Path to a metadata file containing information about the samples in the experiment.
+  --outdir                      [string] The output directory where the results will be saved. You have to use absolute paths to storage on Cloud infrastructure.
+  --email                       [string] Email address for completion summary.
+  --multiqc_title               [string] MultiQC report title. Printed as page header, used for filename if not otherwise specified.
+
+Reference genome options
+  --genome                      [string] Name of iGenomes reference.
+  --fasta                       [string] Path to FASTA genome file.
+
+Process skipping options
+  --skip_trim                   [boolean] Skip trimming fastq files with seqtk
+
+Generic options
+  --multiqc_methods_description [string]          Custom MultiQC yaml file containing HTML including a methods description.
+  --help                        [boolean, string] Display the help message.
+  --help_full                   [boolean]         Display the full detailed help message.
+  --show_hidden                 [boolean]         Display hidden parameters in the help message (only works when --help or --help_full are provided).
+ !! Hiding 19 param(s), use the `--showHidden` parameter to show them !!
+------------------------------------------------------
+</code></pre>
 <p>Looking at the output from the <code>--help</code> command we can see
 which parameters important for inputs and outputs and a description of
 what they are and what the pipeline expects.</p>
 <p>Other parameter groups in the output detail specific parameters that
 can be used for different parts of the pipeline, for example they can be
 used for reference genome or tool analysis options.</p>
-<p>The <code>test</code> profile runs the pipeline on a small dataset to
-make sure the pipeline works as expected. In this episode we will not be
-running this command, but it can be a helpful way to verify the pipeline
-works as expected in your environment.</p>
 <div id="running-an-nf-core-pipeline-exercise-1" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -1027,8 +1020,8 @@ any links that you are not going to use.
   "url": "https://AbigailShockey.github.io/nf-core-workflows-ph/instructor/aio.html",
   "identifier": "https://AbigailShockey.github.io/nf-core-workflows-ph/instructor/aio.html",
   "dateCreated": "2026-08-19",
-  "dateModified": "2026-10-20",
-  "datePublished": "2026-10-20"
+  "dateModified": "2026-10-26",
+  "datePublished": "2026-10-26"
 }
 
   </script><script>
